@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="luigi.png">
+<SubTexture name="idle0000" x="0" y="0" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="idle0001" x="32" y="0" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="idle0002" x="64" y="0" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="idle0003" x="96" y="0" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="idle0004" x="0" y="39" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="idle0005" x="32" y="39" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="idle0006" x="64" y="39" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="idle0007" x="96" y="39" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="left0000" x="0" y="78" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="left0001" x="32" y="78" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="up0000" x="64" y="78" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="up0001" x="96" y="78" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="right0000" x="0" y="117" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="right0001" x="32" y="117" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="down0000" x="64" y="117" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="down0001" x="96" y="117" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+<SubTexture name="down0002" x="0" y="156" width="32" height="39" frameX="0" frameY="0" frameWidth="32" frameHeight="39" />
+</TextureAtlas>
