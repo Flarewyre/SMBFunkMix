@@ -27,7 +27,6 @@ class PauseSubState extends MusicBeatSubState
 	var menuPositioning:Array<Dynamic> = [];
 	var curSelected:Int = 0;
 
-	var pauseMusic:FlxSound;
 	var transitionType = 1;
 	var canControl:Bool = false;
 
@@ -40,14 +39,6 @@ class PauseSubState extends MusicBeatSubState
 		#if debug
 		// trace('pause call');
 		#end
-
-		pauseMusic = new FlxSound();//.loadEmbedded(Paths.music('breakfast'), true, true);
-		//pauseMusic.volume = 0;
-		//pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));
-
-		FlxG.sound.play(Paths.sound('pause'), 1);
-
-		FlxG.sound.list.add(pauseMusic);
 
 		#if debug
 		// trace('pause background');
@@ -275,15 +266,10 @@ class PauseSubState extends MusicBeatSubState
 				menuItem[0].y = menuItem[1] + bg.y;
 			}
 		}
-
-		if (pauseMusic.volume < 0.5)
-			pauseMusic.volume += 0.01 * elapsed;
 	}
 
 	override function destroy()
 	{
-		pauseMusic.destroy();
-
 		super.destroy();
 	}
 

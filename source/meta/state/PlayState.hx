@@ -593,8 +593,6 @@ class PlayState extends MusicBeatState
 				persistentDraw = false;
 				paused = true;
 
-				resetMusic();
-
 				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
 				// discord stuffs should go here
