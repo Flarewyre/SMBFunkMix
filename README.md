@@ -2,8 +2,7 @@
 An open-source, modular, optimized, and HOPEFULLY easy to use [Friday Night Funkin'](https://www.newgrounds.com/portal/view/770371) mod engine!
 ----------------------------------------------
 
-![image](https://media.discordapp.net/attachments/821758818135572491/884267252357156934/FELogo.png?width=1095&height=676)
-[DISCORD SERVER](https://discord.gg/QJt9dUmbk3)
+![image](https://media.discordapp.net/attachments/916918345255751690/930068118938730526/legacy.png)
 
 Forever Engine is an open source modification of the Friday Night Funkin' engine. Forever Engine is not to be confused with its original name, FUNKIN FOREVER, which is now no longer the name of the engine. The reason this is important will have to do with future plans of ours, so stay tuned if you'd like to hear more about those ;)
 ----------------------------------------------
@@ -62,14 +61,11 @@ rest of the rise n' skate team - that mod is the reason im even making an engine
 ----------------------------------------------
 SHOUTOUTS
 ----------------------------------------------
-[Fl0pD00dle](https://fl0pd00dle.newgrounds.com/) - Is making some custom assets in the future, is a really cool and underrated guy who's awesome to talk to. WHEN THEY'RE IMPLEMENTED HE'LL GET BUMPED TO CONTRIBUTOR (WORKING ON IT LOL)
-
 [HThagomizer](https://github.com/HThagomizer) - not MURDERING ME for accidentally pushing the martian mixtape source code
 
 [Tsuraran](https://twitter.com/_Tsuraran) - DOPE ASS CUSTOM MENU MUSIC INCOMING, also made vs skipper with clockwerk which is fucking hilarious ALSO YEAH I'LL BUMP AS WELL AFTER ITS IN THE ENGINE (YES IM WORKING ON IT TOO LMAO)
 
 [Clockwerk](https://twitter.com/ClockwerkSmurf) - also made vs skipper, oh my god what were you guys thinking
-
 ----------------------------------------------
 How to Compile:
 

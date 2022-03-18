@@ -11,7 +11,7 @@ monster-christmas
 bf-christmas
 gf-christmas
 monster
-bf-pixel
+bf
 senpai
 senpai-angry
 spirit

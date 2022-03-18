@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="bullet-bill.png">
+<SubTexture name="down0000" x="0" y="0" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="down0001" x="39" y="0" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="idle0000" x="78" y="0" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="idle0001" x="0" y="41" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="idle0002" x="39" y="41" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="left0000" x="78" y="41" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="left0001" x="0" y="82" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="right0000" x="39" y="82" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="right0001" x="78" y="82" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="up0000" x="0" y="123" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+<SubTexture name="up0001" x="39" y="123" width="39" height="41" frameX="0" frameY="0" frameWidth="39" frameHeight="41" />
+</TextureAtlas>

@@ -8,7 +8,6 @@ import flixel.FlxG;
 import flixel.addons.util.FlxSimplex;
 import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
-import gameObjects.userInterface.HealthIcon;
 import meta.*;
 import meta.data.*;
 import meta.data.dependency.FNFSprite;
@@ -80,61 +79,74 @@ class Character extends FNFSprite
 				updateHitbox();
 				antialiasing = false;
 
-			case 'bf':
-				frames = Paths.getSparrowAtlas('characters/BOYFRIEND');
+			case 'bf-portal':
+				frames = Paths.getSparrowAtlas('characters/bf-portal');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+				animation.addByPrefix('shoot', 'shoot', 12, false);
 
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
 
 				playAnim('idle');
 
-				flipX = true;
-			/*
-				case 'bf-og':
-					frames = Paths.getSparrowAtlas('characters/og/BOYFRIEND');
-
-					animation.addByPrefix('idle', 'BF idle dance', 24, false);
-					animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-					animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-					animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-					animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-					animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-					animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-					animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-					animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-					animation.addByPrefix('hey', 'BF HEY', 24, false);
-					animation.addByPrefix('scared', 'BF idle shaking', 24);
-					animation.addByPrefix('firstDeath', "BF dies", 24, false);
-					animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-					animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-
-					playAnim('idle');
-
-					flipX = true;
-			 */
-
-			case 'bf-dead':
-				frames = Paths.getSparrowAtlas('characters/BF_DEATH');
-
-				animation.addByPrefix('firstDeath', "BF dies", 24, false);
-				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-
-				playAnim('firstDeath');
+				antialiasing = false;
 
 				flipX = true;
 
-			case 'bf-pixel':
-				frames = Paths.getSparrowAtlas('characters/bf-pixel');
+			case 'bf-portal-small':
+				frames = Paths.getSparrowAtlas('characters/bf-portal-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+				animation.addByPrefix('shoot', 'shoot', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-portal-fire':
+				frames = Paths.getSparrowAtlas('characters/bf-portal-fire');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+				animation.addByPrefix('shoot', 'shoot', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+			
+			case 'bf':
+				frames = Paths.getSparrowAtlas('characters/bf');
 				animation.addByPrefix('idle', 'idle', 12, false);
 				animation.addByPrefix('singUP', 'up0', 12, false);
 				animation.addByPrefix('singLEFT', 'left0', 12, false);
@@ -144,6 +156,9 @@ class Character extends FNFSprite
 				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
 				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
 				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+
+				animation.addByPrefix('run', 'run', 12, true);
+				animation.addByPrefix('skid', 'skid', 12, true);
 
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
@@ -166,6 +181,9 @@ class Character extends FNFSprite
 				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
 				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
 
+				animation.addByPrefix('run', 'run', 12, true);
+				animation.addByPrefix('skid', 'skid', 12, true);
+
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
 
@@ -186,6 +204,9 @@ class Character extends FNFSprite
 				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
 				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
 
+				animation.addByPrefix('run', 'run', 12, true);
+				animation.addByPrefix('skid', 'skid', 12, true);
+
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
 
@@ -194,7 +215,8 @@ class Character extends FNFSprite
 				antialiasing = false;
 
 				flipX = true;
-			case 'bf-pixel-dead':
+
+			case 'bf-dead':
 				frames = Paths.getSparrowAtlas('characters/bfPixelsDEAD');
 				animation.addByPrefix('singUP', "BF Dies pixel", 24, false);
 				animation.addByPrefix('firstDeath', "BF Dies pixel", 24, false);
@@ -208,9 +230,522 @@ class Character extends FNFSprite
 				antialiasing = false;
 				flipX = true;
 
+			case 'bf-captured':
+				frames = Paths.getSparrowAtlas('characters/bf-captured');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+
+				animation.addByPrefix('hey', 'hey', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-captured-fire':
+				frames = Paths.getSparrowAtlas('characters/bf-captured-fire');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+
+				animation.addByPrefix('hey', 'hey', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-captured-small':
+				frames = Paths.getSparrowAtlas('characters/bf-captured-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+
+				animation.addByPrefix('hey', 'hey', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+	
+			case 'bf-water':
+				frames = Paths.getSparrowAtlas('characters/bf-water');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+			
+			case 'bf-water-small':
+				frames = Paths.getSparrowAtlas('characters/bf-water-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-water-fire':
+				frames = Paths.getSparrowAtlas('characters/bf-water-fire');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+		
+			case 'bf-glitch':
+				frames = Paths.getSparrowAtlas('characters/bf-glitch');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-glitch-small':
+				frames = Paths.getSparrowAtlas('characters/bf-glitch-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+ 
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+				
+			case 'bf-glitch-fire':
+				frames = Paths.getSparrowAtlas('characters/bf-glitch-fire');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-smm':
+				frames = Paths.getSparrowAtlas('characters/bf-smm');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-smm-small':
+				frames = Paths.getSparrowAtlas('characters/bf-smm-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+ 
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+				
+			case 'bf-smm-fire':
+				frames = Paths.getSparrowAtlas('characters/bf-smm-fire');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up0', 12, false);
+				animation.addByPrefix('singLEFT', 'left0', 12, false);
+				animation.addByPrefix('singRIGHT', 'right0', 12, false);
+				animation.addByPrefix('singDOWN', 'down0', 12, false);
+				animation.addByPrefix('singUPmiss', 'up0', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left0', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right0', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down0', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-lakitu':
+				frames = Paths.getSparrowAtlas('characters/bf-lakitu');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-lakitu-fire':
+				frames = Paths.getSparrowAtlas('characters/bf-lakitu-fire');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-lakitu-small':
+				frames = Paths.getSparrowAtlas('characters/bf-lakitu-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'up', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'left', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'right', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'bf-camera':
+				frames = Paths.getSparrowAtlas('characters/camera/bf-camera');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('singUPmiss', 'miss', 12, false);
+				animation.addByPrefix('singLEFTmiss', 'miss', 12, false);
+				animation.addByPrefix('singRIGHTmiss', 'miss', 12, false);
+				animation.addByPrefix('singDOWNmiss', 'miss', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'him':
+				frames = Paths.getSparrowAtlas('characters/camera/him');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
 			case 'mario-fire':
 				frames = Paths.getSparrowAtlas('characters/mario-fire');
 				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+			case 'mario-ccc-fire':
+				frames = Paths.getSparrowAtlas('characters/mario-ccc-fire');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+				animation.addByPrefix('jump', 'jump', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'mario-ccc':
+				frames = Paths.getSparrowAtlas('characters/mario-ccc');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+				animation.addByPrefix('jump', 'jump', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'mario-ccc-small':
+				frames = Paths.getSparrowAtlas('characters/mario-ccc-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+				animation.addByPrefix('jump', 'jump', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'luigi-ccc':
+				frames = Paths.getSparrowAtlas('characters/luigi-ccc');
+				animation.addByPrefix('idle', 'idle', 9, true);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'right', 12, false);
+				animation.addByPrefix('singRIGHT', 'left', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('jump', 'jump', 12, false);
+				
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+				flipX = true;
+
+			case 'mario-fire-small':
+				frames = Paths.getSparrowAtlas('characters/mario-fire-small');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+			case 'mario-portal':
+				frames = Paths.getSparrowAtlas('characters/mario-portal');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('shoot', 'shoot', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+			case 'spike':
+				frames = Paths.getSparrowAtlas('characters/spike');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('death', 'death', 0, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+			case 'waluigi':
+				frames = Paths.getSparrowAtlas('characters/waluigi');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+				
+			case 'big-boo':
+				frames = Paths.getSparrowAtlas('characters/big-boo');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('shy', 'shy', 12, false);
 				animation.addByPrefix('singUP', 'up', 12, false);
 				animation.addByPrefix('singLEFT', 'left', 12, false);
 				animation.addByPrefix('singRIGHT', 'right', 12, false);
@@ -255,8 +790,54 @@ class Character extends FNFSprite
 
 				antialiasing = false;
 
+			case 'mario-weird':
+				frames = Paths.getSparrowAtlas('characters/mario-weird');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
 			case 'luigi':
 				frames = Paths.getSparrowAtlas('characters/luigi');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+			case 'luigi-water':
+				frames = Paths.getSparrowAtlas('characters/luigi-water');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+		
+			case 'bullet-bill':
+				frames = Paths.getSparrowAtlas('characters/bullet-bill');
 				animation.addByPrefix('idle', 'idle', 12, false);
 				animation.addByPrefix('singUP', 'up', 12, false);
 				animation.addByPrefix('singLEFT', 'left', 12, false);
@@ -289,40 +870,15 @@ class Character extends FNFSprite
 
 				antialiasing = false;
 
-			case 'senpai':
-				frames = Paths.getSparrowAtlas('characters/senpai');
-				animation.addByPrefix('idle', 'Senpai Idle', 24, false);
-				animation.addByPrefix('singUP', 'SENPAI UP NOTE', 24, false);
-				animation.addByPrefix('singLEFT', 'SENPAI LEFT NOTE', 24, false);
-				animation.addByPrefix('singRIGHT', 'SENPAI RIGHT NOTE', 24, false);
-				animation.addByPrefix('singDOWN', 'SENPAI DOWN NOTE', 24, false);
-
-				playAnim('idle');
-
-				setGraphicSize(Std.int(width * 6));
-				updateHitbox();
-
-				antialiasing = false;
-			case 'senpai-angry':
-				frames = Paths.getSparrowAtlas('characters/senpai');
-				animation.addByPrefix('idle', 'Angry Senpai Idle', 24, false);
-				animation.addByPrefix('singUP', 'Angry Senpai UP NOTE', 24, false);
-				animation.addByPrefix('singLEFT', 'Angry Senpai LEFT NOTE', 24, false);
-				animation.addByPrefix('singRIGHT', 'Angry Senpai RIGHT NOTE', 24, false);
-				animation.addByPrefix('singDOWN', 'Angry Senpai DOWN NOTE', 24, false);
-
-				setGraphicSize(Std.int(width * 6));
-				updateHitbox();
-
-				antialiasing = false;
-
-			case 'spirit':
-				frames = Paths.getPackerAtlas('characters/spirit');
-				animation.addByPrefix('idle', "idle spirit_", 24, false);
-				animation.addByPrefix('singUP', "up_", 24, false);
-				animation.addByPrefix('singRIGHT', "right_", 24, false);
-				animation.addByPrefix('singLEFT', "left_", 24, false);
-				animation.addByPrefix('singDOWN', "spirit down_", 24, false);
+			case 'bowser':
+				frames = Paths.getSparrowAtlas('characters/bowser');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('roarStart', 'startroar', 12, false);
+				animation.addByPrefix('roar', 'roar', 18, true);
 
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();
@@ -331,46 +887,74 @@ class Character extends FNFSprite
 
 				antialiasing = false;
 
-			case 'parents-christmas':
-				frames = Paths.getSparrowAtlas('characters/mom_dad_christmas_assets');
-				animation.addByPrefix('idle', 'Parent Christmas Idle', 24, false);
-				animation.addByPrefix('singUP', 'Parent Up Note Dad', 24, false);
-				animation.addByPrefix('singDOWN', 'Parent Down Note Dad', 24, false);
-				animation.addByPrefix('singLEFT', 'Parent Left Note Dad', 24, false);
-				animation.addByPrefix('singRIGHT', 'Parent Right Note Dad', 24, false);
+			case 'bob-omb':
+				frames = Paths.getSparrowAtlas('characters/bombomb');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
 
-				animation.addByPrefix('singUP-alt', 'Parent Up Note Mom', 24, false);
-
-				animation.addByPrefix('singDOWN-alt', 'Parent Down Note Mom', 24, false);
-				animation.addByPrefix('singLEFT-alt', 'Parent Left Note Mom', 24, false);
-				animation.addByPrefix('singRIGHT-alt', 'Parent Right Note Mom', 24, false);
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
 
 				playAnim('idle');
-			case 'tankman':
-				frames = Paths.getSparrowAtlas('characters/tankmanCaptain');
-				animation.addByPrefix('idle', 'Tankman Idle Dance instance', 24, false);
 
-				animation.addByPrefix('singUP', 'Tankman UP note instance', 24, false);
-				animation.addByPrefix('singRIGHT', 'Tankman Note Left instance', 24, false);
-				animation.addByPrefix('singLEFT', 'Tankman Right Note instance', 24, false);
-				animation.addByPrefix('singDOWN', 'Tankman DOWN note instance', 24, false);
+				antialiasing = false;
 
-				animation.addByPrefix('singUP-alt', 'TANKMAN UGH instance', 24, false);
-				animation.addByPrefix('singDOWN-alt', 'PRETTY GOOD tankman instance', 24, false);
+			case 'bob-omb-lit':
+				frames = Paths.getSparrowAtlas('characters/bombomb-lit');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('explode', 'explode', 12, true);
 
-				flipX = true;
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
 				playAnim('idle');
-			// flipX = true;
-			case 'pico-speaker':
-				frames = Paths.getSparrowAtlas('characters/picoSpeaker');
 
-				animation.addByPrefix('shoot1', 'Pico shoot 1', 24, false);
-				animation.addByPrefix('shoot2', 'Pico shoot 2', 24, false);
-				animation.addByPrefix('shoot3', 'Pico shoot 3', 24, false);
-				animation.addByPrefix('shoot4', 'Pico shoot 4', 24, false);
+				antialiasing = false;
 
-				playAnim('shoot1');
+			case 'sonic':
+				frames = Paths.getSparrowAtlas('characters/sonic');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('hey', 'hey', 12, false);
+				animation.addByPrefix('loop', 'loop', 12, true);
+				animation.addByPrefix('wave', 'wave', 12, false);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+
+			case 'tails':
+				frames = Paths.getSparrowAtlas('characters/tails');
+				animation.addByPrefix('idle', 'idle', 12, false);
+				animation.addByPrefix('singUP', 'up', 12, false);
+				animation.addByPrefix('singLEFT', 'left', 12, false);
+				animation.addByPrefix('singRIGHT', 'right', 12, false);
+				animation.addByPrefix('singDOWN', 'down', 12, false);
+				animation.addByPrefix('fly', 'fly', 12, true);
+				animation.addByPrefix('skid', 'skid', 12, true);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
+			
 			default:
+				trace(curCharacter);
 				// set up animations if they aren't already
 
 				// fyi if you're reading this this isn't meant to be well made, it's kind of an afterthought I wanted to mess with and
@@ -421,11 +1005,11 @@ class Character extends FNFSprite
 			flipX = !flipX;
 
 			// Doesn't flip for BF, since his are already in the right place???
-			if (!curCharacter.startsWith('bf'))
+			if (!curCharacter.startsWith('bf') && !curCharacter.startsWith('mario-ccc')  && !curCharacter.startsWith('luigi-ccc'))
 				flipLeftRight();
 			//
 		}
-		else if (curCharacter.startsWith('bf'))
+		else if (curCharacter.startsWith('bf') && !curCharacter.startsWith('mario-ccc')  && !curCharacter.startsWith('luigi-ccc'))
 			flipLeftRight();
 
 		this.x = x;
@@ -455,7 +1039,7 @@ class Character extends FNFSprite
 
 	override function update(elapsed:Float)
 	{
-		if (!curCharacter.startsWith('bf'))
+		if (!curCharacter.startsWith('bf') && !curCharacter.startsWith('mario-ccc') && !curCharacter.startsWith('luigi-ccc'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
 			{
@@ -520,7 +1104,21 @@ class Character extends FNFSprite
 						playAnim((animation.curAnim.name == 'danceRight') ? 'danceLeft' : 'danceRight', forced);
 					// Play normal idle animations for all other characters
 					else
-						playAnim('idle', forced);
+						if (curCharacter == 'big-boo')
+						{
+							if (PlayState.mustHit)
+							{
+								playAnim('shy', forced);
+							}
+							else
+							{
+								playAnim('idle', forced);
+							}
+						}
+						else
+						{
+							playAnim('idle', forced);
+						}
 			}
 		}
 	}

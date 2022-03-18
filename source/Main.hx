@@ -88,13 +88,29 @@ class Main extends Sprite
 			['Mushroom-Plains', 'Bricks-And-Lifts', 'Lethal-Lava-Lair'],
 			['dad', 'dad', 'dad'],
 			[FlxColor.fromRGB(129, 100, 223)],
-			'super mario bros in unreal engine 4'
+			'super mario bros in unreal engine 4',
+			0
 		],
 		[
-			['2-PLAYER-GAME'],
+			['Deep-Deep-Voyage', 'Hop-Hop-Heights', 'Koopa-Armada'],
 			['dad', 'dad', 'dad'],
 			[FlxColor.fromRGB(129, 100, 223)],
-			'go weegee go weegee go weegee'
+			'just another week 1 but we called it the lost levels because lol',
+			0
+		],
+		[
+			['2-PLAYER-GAME', 'Destruction-Dance', 'Portal-Power', 'Bullet-Time', "Boo-Blitz", 'Cross-Console-Clash'],
+			['dad', 'dad', 'dad'],
+			[FlxColor.fromRGB(129, 100, 223)],
+			'go weegee go weegee go weegee',
+			1
+		],
+		[
+			['Wrong-Warp', 'first-level-:)'],
+			['dad', 'dad', 'dad'],
+			[FlxColor.fromRGB(129, 100, 223)],
+			'shhh, its a secret',
+			1
 		]
 	];
 

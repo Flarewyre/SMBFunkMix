@@ -25,6 +25,11 @@ class ForeverAssets
 	public static function generateCombo(asset:String, number:String, allSicks:Bool, assetModifier:String = 'base', changeableSkin:String = 'default',
 			baseLibrary:String, negative:Bool, createdColor:FlxColor, scoreInt:Int):FlxSprite
 	{
+		if (assetModifier == 'gameboy' || assetModifier == 'mari0')
+		{
+			assetModifier = 'pixel';
+		}
+
 		var width = 100;
 		var height = 140;
 
@@ -76,7 +81,7 @@ class ForeverAssets
 	{
 		var width = 500;
 		var height = 163;
-		if (assetModifier == 'pixel')
+		if (assetModifier == 'pixel' || assetModifier == 'gameboy' || assetModifier == "mari0")
 		{
 			width = 24;
 			height = 8;
@@ -94,7 +99,7 @@ class ForeverAssets
 				rating.animation.play('base');
 		}
 
-		if (assetModifier == 'pixel')
+		if (assetModifier == 'pixel' || assetModifier == 'gameboy' || assetModifier == "mari0")
 			rating.setGraphicSize(Std.int(rating.width * 6));
 		else
 		{
@@ -113,6 +118,58 @@ class ForeverAssets
 		switch (assetModifier)
 		{
 			case 'pixel':
+				var noteskin = "default";
+				if (Init.trueSettings.get("Quant Notes"))
+					noteskin = "quant";
+				tempSplash.loadGraphic(Paths.image(ForeverTools.returnSkinAsset('splash-pixel', assetModifier, noteskin,
+					'noteskins/notes')), true, 23,
+					22);
+				tempSplash.animation.add('anim1', [
+					0 + noteData, 
+					4 + noteData, 
+					8 + noteData, 
+					12 + noteData,  
+					12 + noteData], 
+				24, false);
+				tempSplash.animation.add('anim2', [
+					0 + noteData, 
+					4 + noteData, 
+					8 + noteData, 
+					12 + noteData,   
+					12 + noteData], 
+				24, false);
+				tempSplash.animation.play('anim1');
+				tempSplash.addOffset('anim1', -(18 * 6), -(18 * 6));
+				tempSplash.addOffset('anim2', -(18 * 6), -(18 * 6));
+				tempSplash.setGraphicSize(Std.int(tempSplash.width * PlayState.daPixelZoom));
+
+			case 'gameboy':
+				var noteskin = "default";
+				if (Init.trueSettings.get("Quant Notes"))
+					noteskin = "quant";
+				tempSplash.loadGraphic(Paths.image(ForeverTools.returnSkinAsset('splash-pixel', assetModifier, noteskin,
+					'noteskins/notes')), true, 23,
+					22);
+				tempSplash.animation.add('anim1', [
+					0 + noteData, 
+					4 + noteData, 
+					8 + noteData, 
+					12 + noteData,  
+					12 + noteData], 
+				24, false);
+				tempSplash.animation.add('anim2', [
+					0 + noteData, 
+					4 + noteData, 
+					8 + noteData, 
+					12 + noteData,   
+					12 + noteData], 
+				24, false);
+				tempSplash.animation.play('anim1');
+				tempSplash.addOffset('anim1', -(18 * 6), -(18 * 6));
+				tempSplash.addOffset('anim2', -(18 * 6), -(18 * 6));
+				tempSplash.setGraphicSize(Std.int(tempSplash.width * PlayState.daPixelZoom));
+
+			case 'mari0':
 				var noteskin = "default";
 				if (Init.trueSettings.get("Quant Notes"))
 					noteskin = "quant";
@@ -208,6 +265,69 @@ class ForeverAssets
 				newStaticArrow.addOffset('pressed', -67, -50);
 				newStaticArrow.addOffset('confirm', -67, -50);
 
+			case 'gameboy':
+				// yoshubs you just got epicly trolled
+				var framesArgument:String = "arrows-pixels";
+				var noteskin = "default";
+				if (Init.trueSettings.get("Quant Notes"))
+					noteskin = "quant";
+				newStaticArrow.loadGraphic(Paths.image(ForeverTools.returnSkinAsset('$framesArgument', assetModifier, noteskin,
+					'noteskins/notes')), true,
+					17, 17);
+				newStaticArrow.animation.add('static', [staticArrowType]);
+				newStaticArrow.animation.add('pressed', [4 + staticArrowType, 8 + staticArrowType], 12, false);
+				newStaticArrow.animation.add('confirm', [12 + staticArrowType, 16 + staticArrowType], 24, false);
+
+				newStaticArrow.setGraphicSize(Std.int(newStaticArrow.width * PlayState.daPixelZoom));
+				newStaticArrow.updateHitbox();
+				newStaticArrow.antialiasing = false;
+
+				newStaticArrow.addOffset('static', -67, -50);
+				newStaticArrow.addOffset('pressed', -67, -50);
+				newStaticArrow.addOffset('confirm', -67, -50);
+
+			case 'mari0':
+				// yoshubs you just got epicly trolled (twice)
+				var framesArgument:String = "arrows-pixels";
+				var noteskin = "default";
+				if (Init.trueSettings.get("Quant Notes"))
+					noteskin = "quant";
+				newStaticArrow.loadGraphic(Paths.image(ForeverTools.returnSkinAsset('$framesArgument', assetModifier, noteskin,
+					'noteskins/notes')), true,
+					17, 17);
+				newStaticArrow.animation.add('static', [staticArrowType]);
+				newStaticArrow.animation.add('pressed', [4 + staticArrowType, 8 + staticArrowType], 12, false);
+				newStaticArrow.animation.add('confirm', [12 + staticArrowType, 16 + staticArrowType], 24, false);
+
+				newStaticArrow.setGraphicSize(Std.int(newStaticArrow.width * PlayState.daPixelZoom));
+				newStaticArrow.updateHitbox();
+				newStaticArrow.antialiasing = false;
+
+				newStaticArrow.addOffset('static', -67, -50);
+				newStaticArrow.addOffset('pressed', -67, -50);
+				newStaticArrow.addOffset('confirm', -67, -50);
+
+			case 'sonic':
+				// yoshubs you just got epicly trolled (twice)
+				var framesArgument:String = "arrows-pixels";
+				var noteskin = "default";
+				if (Init.trueSettings.get("Quant Notes"))
+					noteskin = "quant";
+				newStaticArrow.loadGraphic(Paths.image(ForeverTools.returnSkinAsset('$framesArgument', assetModifier, noteskin,
+					'noteskins/notes')), true,
+					19, 19);
+				newStaticArrow.animation.add('static', [staticArrowType]);
+				newStaticArrow.animation.add('pressed', [8 + staticArrowType, 12 + staticArrowType], 12, false);
+				newStaticArrow.animation.add('confirm', [12 + staticArrowType, 16 + staticArrowType, 20 + staticArrowType, 24 + staticArrowType, 28 + staticArrowType], 24, false);
+
+				newStaticArrow.setGraphicSize(Std.int(newStaticArrow.width * PlayState.daPixelZoom));
+				newStaticArrow.updateHitbox();
+				newStaticArrow.antialiasing = false;
+
+				newStaticArrow.addOffset('static', -72, -49);
+				newStaticArrow.addOffset('pressed', -72, -49);
+				newStaticArrow.addOffset('confirm', -72, -49);
+
 			case 'chart editor':
 				newStaticArrow.loadGraphic(Paths.image('UI/forever/base/chart editor/note_array'), true, 157, 156);
 				newStaticArrow.animation.add('static', [staticArrowType]);
@@ -273,6 +393,7 @@ class ForeverAssets
 		var changeableSkin = "default";
 		if (Init.trueSettings.get("Quant Notes"))
 			changeableSkin = "quant";
+
 		// gonna improve the system eventually
 		if (changeableSkin.startsWith('quant'))
 			newNote = Note.returnQuantNote(assetModifier, strumTime, noteData, noteType, noteAlt, isSustainNote, prevNote);

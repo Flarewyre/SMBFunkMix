@@ -66,11 +66,14 @@ class CoolUtil
 		var libraryArray:Array<String> = [];
 		#if !html5
 		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
+		trace(unfilteredLibrary);
+
+		if (unfilteredLibrary == null)
+			return null;
 
 		for (folder in unfilteredLibrary)
 		{
-			if (!folder.contains('.'))
-				libraryArray.push(folder);
+			libraryArray.push(folder);
 		}
 		trace(libraryArray);
 		#end

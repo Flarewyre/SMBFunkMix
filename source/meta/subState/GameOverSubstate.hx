@@ -17,6 +17,7 @@ class GameOverSubstate extends MusicBeatSubState
 {
 	//
 	var bf:FlxSprite;
+	var bf2:FlxSprite;
 	var camFollow:FlxObject;
 	var stageSuffix:String = "-pixel";
 	var velocity:Float = 0;
@@ -26,7 +27,7 @@ class GameOverSubstate extends MusicBeatSubState
 
 	public function new(x:Float, y:Float)
 	{
-		var daBoyfriendType = PlayState.boyfriend.curCharacter;
+		var daBoyfriendType = PlayState.bfPrefix;
 		var daBf:String = '';
 		switch (daBoyfriendType)
 		{
@@ -34,6 +35,18 @@ class GameOverSubstate extends MusicBeatSubState
 				daBf = 'luigi-dead';
 				x += 3 * 6;
 				x -= 3;
+			case 'mario-ccc':
+				daBf = 'mario-dead';
+				x += 3 * 6;
+				y += 16 * 6;
+				x -= 3;
+
+			case 'bf-portal':
+				daBf = 'bf-portal-dead';
+				x -= 2;
+			case 'bf-smm':
+				daBf = 'bf-smm-dead';
+				x -= 2;
 			default:
 				daBf = 'bf-dead';
 				x -= 2;
@@ -44,6 +57,18 @@ class GameOverSubstate extends MusicBeatSubState
 		super();
 
 		Conductor.songPosition = 0;
+
+		if (PlayState.isSMM)
+		{
+			bf2 = new FlxSprite(x + (2 * 6), y).loadGraphic(Paths.image('characters/' + daBf));
+			bf2.setGraphicSize(Std.int(bf2.width * 6));
+			bf2.antialiasing = false;
+			bf2.cameras = [PlayState.strumHUD[PlayState.strumHUD.length - 1]];
+
+			bf2.color = FlxColor.BLACK;
+			bf2.alpha = 0.36;
+			add(bf2);
+		}
 
 		bf = new FlxSprite(x, y).loadGraphic(Paths.image('characters/' + daBf));
 		bf.setGraphicSize(Std.int(bf.width * 6));
@@ -68,6 +93,13 @@ class GameOverSubstate extends MusicBeatSubState
 
 		if (controls.ACCEPT)
 			endBullshit();
+		
+		if (controls.BACK)
+		{
+			PlayState.blackBox.visible = true;
+			close();
+			Main.switchState(this, new MainMenuState());
+		}
 
 		timeUntilReset -= elapsed;
 		if (timeUntilReset <= 0)
@@ -89,14 +121,9 @@ class GameOverSubstate extends MusicBeatSubState
 		
 		yPosition += velocity * elapsed;
 		bf.y = Std.int(yPosition / 6) * 6;
-		// if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)
-		// 	FlxG.camera.follow(camFollow, LOCKON, 0.01);
 
-		//if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
-			//FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
-
-		// if (FlxG.sound.music.playing)
-		//	Conductor.songPosition = FlxG.sound.music.time;
+		if (PlayState.isSMM)
+			bf2.y = bf.y + (2 * 6);
 	}
 
 	var isEnding:Bool = false;

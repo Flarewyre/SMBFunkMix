@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="mario-ccc.png">
+<SubTexture name="idle0000" x="0" y="0" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="idle0001" x="48" y="0" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="idle0002" x="96" y="0" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="idle0003" x="144" y="0" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+
+<SubTexture name="right0000" x="0" y="48" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="right0001" x="48" y="48" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+
+<SubTexture name="left0000" x="96" y="48" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="left0001" x="144" y="48" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+
+<SubTexture name="up0000" x="0" y="96" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="up0001" x="48" y="96" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+
+<SubTexture name="down0000" x="96" y="96" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="down0001" x="144" y="96" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+
+
+<SubTexture name="hey0000" x="0" y="144" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="hey0001" x="48" y="144" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="hey0002" x="96" y="144" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="hey0003" x="144" y="144" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="hey0004" x="0" y="192" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="hey0005" x="48" y="192" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+<SubTexture name="hey0006" x="96" y="192" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+
+<SubTexture name="jump0000" x="144" y="192" width="48" height="48" frameX="0" frameY="0" frameWidth="48" frameHeight="48" />
+</TextureAtlas>

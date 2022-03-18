@@ -147,9 +147,15 @@ class Strumline extends FlxTypedGroup<FlxBasic>
 		this.playState = playState;
 		this.displayJudgements = displayJudgements;
 
+		var assetModifier = PlayState.assetModifier;
+		if (PlayState.isSonic && character == PlayState.dadOpponent)
+		{
+			assetModifier = 'sonic';
+		}
+
 		for (i in 0...keyAmount)
 		{
-			var staticArrow:UIStaticArrow = ForeverAssets.generateUIArrows(-24 + x, 24 + (downscroll ? FlxG.height - (28 * 6) : 0), i, PlayState.assetModifier);
+			var staticArrow:UIStaticArrow = ForeverAssets.generateUIArrows(-24 + x, 24 + (downscroll ? FlxG.height - (28 * 6) : 0), i, assetModifier);
 			staticArrow.ID = i;
 
 			staticArrow.x -= ((keyAmount / 2) * Note.swagWidth);
@@ -162,7 +168,7 @@ class Strumline extends FlxTypedGroup<FlxBasic>
 			staticArrow.playAnim('static');
 
 			if (noteSplashes) {
-				var noteSplash:NoteSplash = ForeverAssets.generateNoteSplashes('noteSplashes', PlayState.assetModifier, 'UI', i);
+				var noteSplash:NoteSplash = ForeverAssets.generateNoteSplashes('noteSplashes', assetModifier, 'UI', i);
 				splashNotes.add(noteSplash);
 			}
 		}

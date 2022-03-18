@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="sonic.png">
+<SubTexture name="idle0000" x="0" y="0" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="idle0001" x="64" y="0" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="idle0002" x="128" y="0" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="idle0003" x="192" y="0" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="idle0004" x="0" y="48" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="idle0005" x="64" y="48" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+
+<SubTexture name="right0000" x="128" y="48" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="right0001" x="192" y="48" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+
+<SubTexture name="left0000" x="0" y="96" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="left0001" x="64" y="96" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+
+<SubTexture name="up0000" x="128" y="96" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="up0001" x="192" y="96" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+
+<SubTexture name="down0000" x="0" y="144" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="down0001" x="64" y="144" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+
+
+<SubTexture name="hey0000" x="128" y="144" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="hey0001" x="192" y="144" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="loop0000" x="0" y="192" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="loop0001" x="64" y="192" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="loop0002" x="128" y="192" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="loop0003" x="192" y="192" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+
+<SubTexture name="wave0000" x="0" y="240" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0001" x="64" y="240" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0002" x="128" y="240" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0003" x="192" y="240" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0004" x="0" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0005" x="64" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0006" x="128" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0007" x="128" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0008" x="128" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0009" x="128" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0010" x="128" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0011" x="192" y="288" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+<SubTexture name="wave0012" x="0" y="336" width="64" height="48" frameX="0" frameY="0" frameWidth="64" frameHeight="48" />
+</TextureAtlas>

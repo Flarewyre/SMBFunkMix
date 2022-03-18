@@ -17,4 +17,10 @@
 <SubTexture name="down0000" x="68" y="102" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
 <SubTexture name="down0001" x="102" y="102" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
 <SubTexture name="down0002" x="0" y="136" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
+
+<SubTexture name="run0000" x="34" y="136" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
+<SubTexture name="run0001" x="68" y="136" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
+<SubTexture name="run0002" x="102" y="136" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
+<SubTexture name="run0003" x="0" y="170" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
+<SubTexture name="skid0000" x="34" y="170" width="34" height="34" frameX="0" frameY="0" frameWidth="34" frameHeight="34" />
 </TextureAtlas>

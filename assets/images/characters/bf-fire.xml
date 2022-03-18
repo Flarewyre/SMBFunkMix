@@ -22,4 +22,9 @@
 <SubTexture name="hey0000" x="78" y="104" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
 <SubTexture name="hey0001" x="0" y="130" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
 <SubTexture name="hey0002" x="26" y="130" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
+<SubTexture name="run0000" x="52" y="130" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
+<SubTexture name="run0001" x="78" y="130" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
+<SubTexture name="run0002" x="0" y="156" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
+<SubTexture name="run0003" x="26" y="156" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
+<SubTexture name="skid0000" x="52" y="156" width="26" height="26" frameX="0" frameY="0" frameWidth="26" frameHeight="26" />
 </TextureAtlas>

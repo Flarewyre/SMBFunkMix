@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="bowser.png">
+<SubTexture name="idle0000" x="0" y="0" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="idle0001" x="52" y="0" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="idle0002" x="104" y="0" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="idle0003" x="156" y="0" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="right0000" x="208" y="0" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="right0001" x="0" y="52" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="right0002" x="52" y="52" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="down0000" x="104" y="52" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="down0001" x="156" y="52" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="down0002" x="208" y="52" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="left0000" x="0" y="104" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="left0001" x="52" y="104" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="left0002" x="104" y="104" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="up0000" x="156" y="104" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="up0001" x="208" y="104" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="up0002" x="0" y="156" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="up0003" x="52" y="156" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="up0004" x="104" y="156" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="up0005" x="156" y="156" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="startroar0000" x="208" y="156" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="startroar0001" x="0" y="208" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="startroar0002" x="52" y="208" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="startroar0003" x="104" y="208" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="roar0000" x="104" y="208" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="roar0001" x="156" y="208" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="roar0002" x="208" y="208" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+<SubTexture name="roar0003" x="0" y="260" width="52" height="52" frameX="0" frameY="0" frameWidth="52" frameHeight="52" />
+</TextureAtlas>

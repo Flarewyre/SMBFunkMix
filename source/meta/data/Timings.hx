@@ -16,11 +16,11 @@ class Timings
 	// from left to right
 	// max milliseconds, score from it and percentage
 	public static var judgementsMap:Map<String, Array<Dynamic>> = [
-		"sick" => [0, 50, 350, 100, 3],
-		"good" => [1, 100, 150, 75, 2],
-		"bad" => [2, 120, 0, 25, 1],
-		"shit" => [3, 140, -50, -150, 0],
-		"miss" => [4, 180, -100, -175, 0],
+		"sick" => [0, 50, 350, 100, 3, 30],
+		"good" => [1, 100, 150, 75, 2, 15],
+		"bad" => [2, 120, 0, 25, 1, 0],
+		"shit" => [3, 140, -50, -150, 0, -300],
+		"miss" => [4, 180, -100, -175, 0, 505],
 	];
 
 	public static var msThreshold:Float = 0;
@@ -121,7 +121,26 @@ class Timings
 			comboDisplay = judgementsMap.get(smallestRating)[4];
 
 		// this updates the most so uh
-		PlayState.uiHUD.updateScoreText();
+		if (PlayState.isGameboy)
+		{
+			PlayState.gameboyHUD.updateScoreText();
+		}
+		else if (PlayState.isMari0)
+		{
+			PlayState.mari0HUD.updateScoreText();
+		}
+		else if (PlayState.isSMM)
+		{
+			PlayState.smmHUD.updateScoreText();
+		}
+		else if (PlayState.isSonic)
+		{
+			PlayState.sonicHUD.updateScoreText();
+		}
+		else
+		{
+			PlayState.uiHUD.updateScoreText();
+		}
 	}
 
 	public static function getAccuracy()

@@ -44,31 +44,64 @@ class PauseSubState extends MusicBeatSubState
 		// trace('pause background');
 		#end
 
-		bg = new FlxSprite(0, FlxG.height).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		var isMinus = PlayState.SONG.song == 'Wrong-Warp';
+		var pausePath = 'menus/pixel/pause/PAUSE';
+		var marioPath = 'menus/pixel/pause/walking';
+		var barPath = 'menus/pixel/pause/progressbar';
+
+		if (isMinus)
+		{
+			pausePath = 'menus/pixel/pause/PAUSE-glitched';
+			marioPath = 'menus/pixel/pause/walking-glitched';
+		}
+
+		if (PlayState.isMari0)
+		{
+			marioPath = 'menus/pixel/pause/mari0/walking';
+			barPath = 'menus/pixel/pause/mari0/progressbar';
+		}
+
+		if (PlayState.isSMM)
+		{
+			marioPath = 'menus/pixel/pause/smm/walking';
+			barPath = 'menus/pixel/pause/smm/progressbar';
+		}
+
+		bg = new FlxSprite(0, 0);
+		bg.loadGraphic(Paths.image('menus/pixel/pause/bg'));
+		bg.setGraphicSize(Std.int(bg.width * 6));
+		bg.updateHitbox();
+		bg.antialiasing = false;
 		bg.alpha = 1;
 		bg.scrollFactor.set();
 		add(bg);
 		bgPos = FlxG.height;
 
+		var songDetails = CoolUtil.dashToSpace(PlayState.SONG.song);
+		if (songDetails == 'Hop Hop Heights')
+		{
+			songDetails = 'Hop-Hop Heights';
+		}
+
 		var levelInfo:FlxText = new FlxText(0, (28 * 6), 0, "", 8);
-		levelInfo.text += CoolUtil.dashToSpace(PlayState.SONG.song);
+		levelInfo.text += songDetails;
 		levelInfo.scrollFactor.set();
 		levelInfo.setFormat(Paths.font("smb1.ttf"), 8);
 		levelInfo.setGraphicSize(Std.int(levelInfo.width * 6));
 		levelInfo.updateHitbox();
 		add(levelInfo);
 
-		var pauseText:FlxSprite = new FlxSprite(0, (12 * 6)).loadGraphic(Paths.image('menus/pixel/pause/PAUSE'));
+		var pauseText:FlxSprite = new FlxSprite(0, (12 * 6)).loadGraphic(Paths.image(pausePath));
 		pauseText.setGraphicSize(Std.int(pauseText.width * 6));
 		pauseText.antialiasing = false;
 		add(pauseText);
 
-		var progressBar:FlxSprite = new FlxSprite(0, (60 * 6)).loadGraphic(Paths.image('menus/pixel/pause/progressbar'));
+		var progressBar:FlxSprite = new FlxSprite(0, (60 * 6)).loadGraphic(Paths.image(barPath));
 		progressBar.setGraphicSize(Std.int(progressBar.width * 6));
 		progressBar.antialiasing = false;
 		add(progressBar);
 
-		var mario:FlxSprite = new FlxSprite(0, (56 * 6)).loadGraphic(Paths.image('menus/pixel/pause/walking'), true, 16, 16);
+		var mario:FlxSprite = new FlxSprite(0, (56 * 6)).loadGraphic(Paths.image(marioPath), true, 16, 16);
 		mario.animation.add("walk", [0, 0, 1, 2], 9, true);
 		mario.animation.play("walk");
 
@@ -146,6 +179,8 @@ class PauseSubState extends MusicBeatSubState
 		#end
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+		
+		FlxG.sound.play(Paths.sound('pause'), 1);
 
 		#if debug
 		// trace('cameras done');

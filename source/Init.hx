@@ -147,6 +147,12 @@ class Init extends FlxState
 			Checkmark,
 			"lol this wont show in-game im not writing shit here",
 			NOT_FORCED
+		],
+		'Photosensitivity' => [
+			false,
+			Checkmark,
+			"if you see this you are legally obligated to",
+			NOT_FORCED
 		]
 
 	];
@@ -223,7 +229,7 @@ class Init extends FlxState
 
 	private function gotoTitleScreen()
 	{
-		Main.switchState(this, new MainMenuState());
+		Main.switchState(this, new TitleState());
 	}
 
 	public static function loadSettings():Void

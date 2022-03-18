@@ -118,7 +118,17 @@ class Paths
 	}
 
 	inline static public function songJson(song:String, secondSong:String, ?library:String)
+	{
+		if (song == 'first-level-:)')
+		{
+			song = 'first-level';
+		}
+		if (secondSong == 'first-level-:)')
+		{
+			secondSong = 'first-level';
+		}
 		return getPath('songs/${song.toLowerCase()}/${secondSong.toLowerCase()}.json', TEXT, library);
+	}
 
 	static public function sound(key:String, ?library:String)
 	{
@@ -137,6 +147,10 @@ class Paths
 
 	inline static public function voices(song:String)
 	{
+		if (song == 'first-level-:)')
+		{
+			song = 'first-level';
+		}
 		var voicePath = 'songs/${song.toLowerCase()}/Voices.$SOUND_EXT';
 		if (!FileSystem.exists(getPath(voicePath, MUSIC, null)))
 		{
@@ -147,6 +161,10 @@ class Paths
 
 	inline static public function inst(song:String)
 	{
+		if (song == 'first-level-:)')
+		{
+			song = 'first-level';
+		}
 		var instPath = 'songs/${song.toLowerCase()}/Inst.$SOUND_EXT';
 		if (!FileSystem.exists(getPath(instPath, MUSIC, null)))
 		{
@@ -175,5 +193,9 @@ class Paths
 		return (FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library)));
 	}
 
+	inline static public function getPackerAtlasJson(key:String, ?library:String)
+	{
+		return FlxAtlasFrames.fromTexturePackerJson(image(key, library), file('images/$key.json', library));
+	}
 	
 }

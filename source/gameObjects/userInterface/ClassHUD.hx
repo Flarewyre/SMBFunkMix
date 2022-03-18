@@ -39,11 +39,11 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 	private var healthBar:FlxBar;
 
 	private var SONG = PlayState.SONG;
-	public var iconP1:HealthIcon;
-	public var iconP2:HealthIcon;
 	public var ratingIcon:FlxSprite;
 	public var flagIcon:FlxSprite;
 	private var stupidHealth:Float = 0;
+
+	var curBeat = 0;
 
 	// eep
 	public function new()
@@ -58,16 +58,16 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		var barY = FlxG.height - (7 * 6);
 		if (Init.trueSettings.get('Downscroll'))
 			barY = 3 * 6;
-
-		var barY2 = 0;
-		if (Init.trueSettings.get('Downscroll'))
-			barY2 = FlxG.height - (28 * 6);
 		
-		var UIBox:FlxShapeBox = new FlxShapeBox(0, barY2, 960, (28 * 6), {thickness: 0, color: FlxColor.TRANSPARENT}, FlxColor.BLACK);
+		var UIBox:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('UI/default/pixel/bg'));
+		UIBox.setGraphicSize(Std.int(UIBox.width * 6));
+		UIBox.updateHitbox();
+		UIBox.scrollFactor.set();
+		UIBox.antialiasing = false;
 		add(UIBox);
 
-		var UIBox2:FlxShapeBox = new FlxShapeBox(0, barY - (4 * 6), 960, (11 * 6), {thickness: 0, color: FlxColor.TRANSPARENT}, FlxColor.BLACK);
-		add(UIBox2);
+		if (Init.trueSettings.get('Downscroll'))
+			UIBox.flipY = true;
 
 		healthBarBG = new FlxSprite(0,
 			barY).loadGraphic(Paths.image(ForeverTools.returnSkinAsset('healthBar', PlayState.assetModifier, PlayState.changeableSkin, 'UI')));
@@ -82,16 +82,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		healthBar.visible = false;
 		// healthBar
 		add(healthBar);
-
-		iconP1 = new HealthIcon(SONG.player1, true);
-		iconP1.y = healthBar.y - (iconP1.height / 2);
-		iconP1.visible = false;
-		add(iconP1);
-
-		iconP2 = new HealthIcon(SONG.player2, false);
-		iconP2.y = healthBar.y - (iconP2.height / 2);
-		iconP2.visible = false;
-		add(iconP2);
 
 		scoreBar = new FlxText(0, barY, 0, "00000000");
 		scoreBar.autoSize = false;
@@ -158,32 +148,31 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		add(infoBar);
 	}
 
+	public function flicker(object:FlxBasic)
+	{
+		if (object.visible && FlxG.random.bool(3))
+		{
+			object.visible = false;
+		}
+		else
+		{
+			object.visible = true;
+		}
+	}
+
 	override public function update(elapsed:Float)
 	{
 		// pain, this is like the 7th attempt
 		healthBar.percent = (PlayState.health * 50);
-
-		var iconLerp = 0.5;
-		iconP1.setGraphicSize(Std.int(FlxMath.lerp(iconP1.initialWidth, iconP1.width, iconLerp)));
-		iconP2.setGraphicSize(Std.int(FlxMath.lerp(iconP2.initialWidth, iconP2.width, iconLerp)));
-
-		iconP1.updateHitbox();
-		iconP2.updateHitbox();
-
-		var iconOffset:Int = 26;
-
-		iconP1.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01) - iconOffset);
-		iconP2.x = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (iconP2.width - iconOffset);
-
-		if (healthBar.percent < 20)
-			iconP1.animation.curAnim.curFrame = 1;
-		else
-			iconP1.animation.curAnim.curFrame = 0;
-
-		if (healthBar.percent > 80)
-			iconP2.animation.curAnim.curFrame = 1;
-		else
-			iconP2.animation.curAnim.curFrame = 0;
+		
+		var isMinus = SONG.song == 'Wrong-Warp';
+		if (isMinus && !Init.trueSettings.get("Photosensitivity") && Std.int(Sys.time() * 1000) % 12 == 0)
+		{
+			flicker(scoreBar);
+			flicker(accuracyText);
+			flicker(accuracyText2);
+			flicker(ratingIcon);
+		}
 	}
 
 	private final divider:String = ' - ';
@@ -213,7 +202,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 		accuracyText2.text = "." + stringSplit[1] + '%';
 		///
 
-		var isNegative:Bool = false;
 		if (scoreBar.text.charAt(0) == "-") 
 		{
 			scoreBar.color = 0xB53120;
@@ -264,14 +252,6 @@ class ClassHUD extends FlxTypedGroup<FlxBasic>
 
 	public function beatHit()
 	{
-		if (!Init.trueSettings.get('Reduced Movements'))
-		{
-			iconP1.setGraphicSize(Std.int(iconP1.width + 45));
-			iconP2.setGraphicSize(Std.int(iconP2.width + 45));
-
-			iconP1.updateHitbox();
-			iconP2.updateHitbox();
-		}
-		//
+		
 	}
 }

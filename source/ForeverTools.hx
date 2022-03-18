@@ -21,6 +21,7 @@ class ForeverTools
 		var song = Paths.music('freakyMenu');
 		FlxG.sound.playMusic(song, 0.7);
 		FlxG.sound.music.volume = 0.7;
+		FlxG.sound.music.looped = true;
 		// placeholder bpm
 		Conductor.changeBPM(89);
 		// }
@@ -31,7 +32,7 @@ class ForeverTools
 	public static function playFreeplayMusic(resetVolume:Bool = true)
 	{	
 		var song = Paths.music('freeplayMenu');
-		FlxG.sound.playMusic(song, 0.55);
+		FlxG.sound.playMusic(song, 0.7);
 		// placeholder bpm
 		Conductor.changeBPM(89);
 	}
@@ -44,6 +45,26 @@ class ForeverTools
 		// placeholder bpm
 		Conductor.changeBPM(89);
 	}
+
+	// set up maps and stuffs
+	public static function playTitleMusic(resetVolume:Bool = true)
+		{
+			var song = Paths.music('titleMenu');
+			FlxG.sound.playMusic(song, 0.65);
+			FlxG.sound.music.looped = false;
+			// placeholder bpm
+			Conductor.changeBPM(89);
+		}
+
+	// set up maps and stuffs
+	public static function playEasterEgg(resetVolume:Bool = true)
+	{
+		var song = Paths.file('images/UI/default/gameboy/music.ogg');
+		FlxG.sound.playMusic(song, 0.55);
+		// placeholder bpm
+		Conductor.changeBPM(89);
+	}
+	
 
 	public static function returnSkinAsset(asset:String, assetModifier:String = 'base', changeableSkin:String = 'default', baseLibrary:String,
 			?defaultChangeableSkin:String = 'default', ?defaultBaseAsset:String = 'base'):String

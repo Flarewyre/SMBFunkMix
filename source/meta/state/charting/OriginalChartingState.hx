@@ -88,9 +88,6 @@ class OriginalChartingState extends MusicBeatState
 
 	var vocals:FlxSound;
 
-	var leftIcon:HealthIcon;
-	var rightIcon:HealthIcon;
-
 	override function create()
 	{
 		super.create();
@@ -122,17 +119,6 @@ class OriginalChartingState extends MusicBeatState
 					validScore: false
 			};*/
 		}
-
-		leftIcon = new HealthIcon(_song.player1);
-		rightIcon = new HealthIcon(_song.player2);
-		leftIcon.scrollFactor.set(1, 1);
-		rightIcon.scrollFactor.set(1, 1);
-
-		leftIcon.setGraphicSize(0, 45);
-		rightIcon.setGraphicSize(0, 45);
-
-		leftIcon.setPosition(0, -100);
-		rightIcon.setPosition(gridBG.width / 2, -100);
 
 		FlxG.mouse.visible = true;
 		FlxG.save.bind('funkin', 'ninjamuffin99');
@@ -236,14 +222,12 @@ class OriginalChartingState extends MusicBeatState
 		var player1DropDown = new FlxUIDropDownMenu(10, 100, FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String)
 		{
 			_song.player1 = characters[Std.parseInt(character)];
-			updateHeads();
 		});
 		player1DropDown.selectedLabel = _song.player1;
 
 		var player2DropDown = new FlxUIDropDownMenu(140, 100, FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String)
 		{
 			_song.player2 = characters[Std.parseInt(character)];
-			updateHeads();
 		});
 
 		player2DropDown.selectedLabel = _song.player2;
@@ -431,8 +415,6 @@ class OriginalChartingState extends MusicBeatState
 				case 'Must hit section':
 					_song.notes[curSection].mustHitSection = check.checked;
 
-					updateHeads();
-
 				case 'Change BPM':
 					_song.notes[curSection].changeBPM = check.checked;
 					FlxG.log.add('changed bpm shit');
@@ -503,6 +485,10 @@ class OriginalChartingState extends MusicBeatState
 
 		Conductor.songPosition = songMusic.time;
 		_song.song = typingShit.text;
+		if (_song.song.toLowerCase() == 'green-screen')
+		{
+			_song.song = 'Mushroom-Plains';
+		}
 
 		strumLine.y = getYfromStrum((Conductor.songPosition - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps));
 
@@ -798,6 +784,10 @@ class OriginalChartingState extends MusicBeatState
 			var strum = note[0] + Conductor.stepCrochet * (_song.notes[daSec].lengthInSteps * sectionNum);
 
 			var copiedNote:Array<Dynamic> = [strum, note[1], note[2]];
+			if (note.length > 3)
+			{
+				copiedNote.push(note[3]);
+			}
 			_song.notes[daSec].sectionNotes.push(copiedNote);
 		}
 
@@ -813,22 +803,6 @@ class OriginalChartingState extends MusicBeatState
 		check_altAnim.checked = sec.altAnim;
 		check_changeBPM.checked = sec.changeBPM;
 		stepperSectionBPM.value = sec.bpm;
-
-		updateHeads();
-	}
-
-	function updateHeads():Void
-	{
-		if (check_mustHitSection.checked)
-		{
-			leftIcon.animation.play(_song.player1);
-			rightIcon.animation.play(_song.player2);
-		}
-		else
-		{
-			leftIcon.animation.play(_song.player2);
-			rightIcon.animation.play(_song.player1);
-		}
 	}
 
 	function updateNoteUI():Void
@@ -979,6 +953,23 @@ class OriginalChartingState extends MusicBeatState
 		var noteData = Math.floor(FlxG.mouse.x / GRID_SIZE);
 		var noteType = curNoteType; // define notes as the current type
 		var noteSus = 0; // ninja you will NOT get away with this
+
+		if (FlxG.keys.pressed.ALT)
+		{
+			noteType = 3;
+		}
+		if (FlxG.keys.pressed.T)
+		{
+			noteType = 4;
+		}
+		if (FlxG.keys.pressed.Y)
+		{
+			noteType = 5;
+		}
+		if (FlxG.keys.pressed.U)
+		{
+			noteType = 6;
+		}
 
 		_song.notes[curSection].sectionNotes.push([noteStrum, noteData, noteSus, noteType]);
 

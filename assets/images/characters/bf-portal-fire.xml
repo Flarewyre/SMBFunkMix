@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="bf-portal-fire.png">
+<SubTexture name="idle0000" x="0" y="0" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="idle0001" x="38" y="0" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="idle0002" x="76" y="0" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="idle0003" x="0" y="30" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="idle0004" x="38" y="30" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="left0000" x="76" y="30" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="left0001" x="0" y="60" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="up0000" x="38" y="60" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="up0001" x="76" y="60" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="right0000" x="0" y="90" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="right0001" x="38" y="90" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="down0000" x="76" y="90" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="down0001" x="0" y="120" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="shoot0000" x="38" y="120" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+<SubTexture name="shoot0001" x="76" y="120" width="38" height="30" frameX="0" frameY="0" frameWidth="38" frameHeight="30" />
+</TextureAtlas>

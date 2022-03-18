@@ -11,6 +11,7 @@ import flixel.util.FlxTimer;
 import gameObjects.userInterface.menu.Checkmark;
 import gameObjects.userInterface.menu.Selector;
 import meta.MusicBeat.MusicBeatState;
+import meta.data.*;
 import meta.data.dependency.Discord;
 import meta.data.dependency.FNFSprite;
 import meta.data.font.Alphabet;
@@ -30,6 +31,9 @@ class OptionsMenuState extends MusicBeatState
 	var curSelectedScript:Void->Void;
 	var curCategory:String;
 
+	var pressesLeft = 8;
+	var lastPressed = false;
+
 	var warpText:FlxText;
 	var bg:FlxSprite;
 	var bg2:FlxSprite;
@@ -38,6 +42,10 @@ class OptionsMenuState extends MusicBeatState
 	var isPipes:Bool = true;
 	var enteringPipe:Bool = false;
 	var marioY:Float = 0;
+	var ogY:Float = 0;
+
+	var easterEggTime:Float = 123.695;
+	var easterEggStop:Float = -2;
 
 	var mario:FlxSprite;
 	var pipes = ['prefs', 'ctrls', 'exit'];
@@ -77,6 +85,7 @@ class OptionsMenuState extends MusicBeatState
 					['Centered Notefield', getFromOption],
 					['Ghost Tapping', getFromOption],
 					['Quant Notes', getFromOption],
+					['Photosensitivity', getFromOption],
 					['', null],
 					["Framerate Cap", getFromOption],
 					['FPS Counter', getFromOption],
@@ -154,6 +163,7 @@ class OptionsMenuState extends MusicBeatState
 	function loadPipes()
 	{
 		isPipes = true;
+		pressesLeft = 8;
 
 		// kill previous subgroup attachments
 		if (attachments != null)
@@ -163,7 +173,10 @@ class OptionsMenuState extends MusicBeatState
 		if (activeSubgroup != null)
 			remove(activeSubgroup);
 
-		mario = new FlxSprite(0, 56 * 6).loadGraphic(Paths.image("menus/pixel/options/mario"));
+		mario = new FlxSprite(0, 56 * 6).loadGraphic(Paths.image("menus/pixel/options/mario"), true, 18, 32);
+		mario.animation.add("glitch", [0, 1, 2], 0, false);
+		mario.animation.play("glitch");
+
 		mario.setGraphicSize(Std.int(mario.width * 6));
 		mario.updateHitbox();
 		mario.antialiasing = false;
@@ -258,7 +271,7 @@ class OptionsMenuState extends MusicBeatState
 		bg2.visible = true;
 
 		// fix weird glitch
-		curSelection = 5;
+		curSelection = 6;
 		getFromOption();
 
 		// reset the selection
@@ -279,7 +292,7 @@ class OptionsMenuState extends MusicBeatState
 		if (curPipe < 0)
 			curPipe = pipes.length - 1;
 		
-		mario.x = 16 * 6;
+		mario.x = 15 * 6;
 		mario.x += 56 * 6 * curPipe;
 
 		var i = 0;
@@ -401,6 +414,28 @@ class OptionsMenuState extends MusicBeatState
 	{
 		super.update(elapsed);
 
+		if (easterEggTime > 0)
+		{
+			easterEggTime -= elapsed;
+			if (easterEggTime <= 0)
+			{
+				easterEggTime = -2;
+				easterEggStop = 8.7;
+				trace("A");
+				ForeverTools.playEasterEgg();
+			}
+		}
+
+		if (easterEggStop > 0)
+		{
+			easterEggStop -= elapsed;
+			if (easterEggStop <= 0)
+			{
+				easterEggStop = 0;
+				ForeverTools.playOptionsMusic();
+			}
+		}
+
 		var leftP = controls.LEFT_P;
 		var rightP = controls.RIGHT_P;
 		var upP = controls.UP_P;
@@ -423,6 +458,7 @@ class OptionsMenuState extends MusicBeatState
 				{
 					lockedMovement = true;
 					enteringPipe = true;
+					ogY = mario.y;
 					marioY = mario.y;
 					FlxG.sound.play(Paths.sound('power_down'), 1);
 				}
@@ -443,6 +479,7 @@ class OptionsMenuState extends MusicBeatState
 					new FlxTimer().start(1, function(tmr:FlxTimer)
 					{
 						enteringPipe = false;
+						easterEggTime = -2;
 						switch (curPipe)
 						{
 							case 0:
@@ -455,6 +492,39 @@ class OptionsMenuState extends MusicBeatState
 								Main.switchState(this, new MainMenuState());
 						}
 					});
+				}
+
+				if (downP && !lastPressed)
+				{
+					pressesLeft -= 1;
+					if (pressesLeft <= 4)
+					{
+						mario.animation.frameIndex = 1;
+						mario.y = ogY;
+						FlxG.sound.play(Paths.sound('power_down'), 1);
+						if (pressesLeft <= 2)
+						{
+							mario.animation.frameIndex = 2;
+							if (pressesLeft <= 0)
+							{
+								var songName = "Wrong-Warp";
+								var curDifficulty = 1;
+								var poop:String = Highscore.formatSong(songName);
+				
+								PlayState.SONG = Song.loadFromJson(poop, songName);
+								PlayState.isStoryMode = false;
+								PlayState.storyDifficulty = curDifficulty;
+				
+								PlayState.storyWeek = 0;
+								trace('CUR WEEK' + PlayState.storyWeek);
+				
+								if (FlxG.sound.music != null)
+									FlxG.sound.music.stop();
+								
+								Main.switchState(this, new PlayState());
+							}
+						}
+					}
 				}
 			}
 		}
@@ -495,6 +565,8 @@ class OptionsMenuState extends MusicBeatState
 				loadPipes();
 			}
 		}
+
+		lastPressed = downP;
 	}
 
 	private function returnSubgroup(groupName:String):FlxTypedGroup<FlxText>
@@ -515,7 +587,7 @@ class OptionsMenuState extends MusicBeatState
 
 				thisOption.screenCenter(X);
 				thisOption.x = Std.int(thisOption.x / 6) * 6;
-				thisOption.y += (8 * 6 * i) + (24 * 6);
+				thisOption.y += (8 * 6 * i) + (20 * 6);
 				newGroup.add(thisOption);
 			}
 		}
