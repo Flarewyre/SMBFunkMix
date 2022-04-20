@@ -2400,7 +2400,8 @@ class PlayState extends MusicBeatState
 		// sometime my brain farts dont ask me why these functions were separated before
 
 		// load external charts
-		// stole from shubs i am tird
+		// stole from shubs i am tird 
+		#if windows 
 		var existingCharts = CoolUtil.returnAssetsLibrary('external', 'assets/songs/' + SONG.song);
 		trace(existingCharts);
 
@@ -2416,7 +2417,7 @@ class PlayState extends MusicBeatState
 				secretFunnyCharts[i].sort(sortByShit);
 			}
 		}
-
+                #end 
 		// sort through them
 		unspawnNotes.sort(sortByShit);
 		// give the game the heads up to be able to start
